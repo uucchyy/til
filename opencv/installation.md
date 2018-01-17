@@ -1,7 +1,11 @@
 
-### document
-[Installation in Linux](https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html)
+### link
+[Installation in Linux](https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html)   
 [source](https://opencv.org/releases.html)
+
+---
+
+### install
 
 	# sudo apt-get install build-essential
 	# sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
@@ -21,6 +25,8 @@
 
 	# echo /usr/local/lib > /etc/ld.so.conf.d/opencv.conf
 	# ldconfig -v
+
+---
 
 ### sample
 
@@ -43,6 +49,7 @@
 	   return 0;
 	}
 
+---
 
 ### build
 
