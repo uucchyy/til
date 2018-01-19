@@ -74,19 +74,20 @@ EXIFの orientation flag によって回転しないで読み込む。
 
 ### test code
 
-	#include <iostream>
-	#include <opencv2/opencv.hpp>
-	
-	int main(int argc, const char* argv[]) {
-	
-	   cv::Mat image = cv::imread("data.jpg" , 0);
-	   if (image.empty()) {
-	      std::cout << "read error.\n";
-	      return -1;
-	   }
-	
-	   cv::imwrite("output.jpg" , image);
-	
-	   return 0;
-	}
+```C++
+#include <iostream>
+#include <opencv2/opencv.hpp>
 
+int main(int argc, const char* argv[]) {
+
+   cv::Mat image = cv::imread("data.jpg" , 0);
+   if (image.empty()) {
+      std::cout << "read error.\n";
+      return -1;
+   }
+
+   cv::imwrite("output.jpg" , image);
+
+   return 0;
+}
+```
