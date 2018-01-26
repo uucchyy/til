@@ -34,7 +34,7 @@ RenderUrlsToFile = function(urls, callbackPerUrl, callbackFinal) {
             page.viewportSize = { width : 1366 , height: 768 } ;
             page.settings.userAgent = "Phantom.js bot";
             
-            var tablewidth,imgwidth,naturalWidth;
+            var tablewidth,imgwidth,naturalwidth;
             
             return page.open(url, function(status) {
                 var file;
@@ -62,7 +62,7 @@ RenderUrlsToFile = function(urls, callbackPerUrl, callbackFinal) {
                             }
                             return maxwidth; 
                         });
-                        naturalWidth = page.evaluate(function() { 
+                        naturalwidth = page.evaluate(function() { 
                             var img = document.getElementsByTagName('img');
                             var maxwidth = 0;
                             for(var i = 0; i < img.length; i++) {
