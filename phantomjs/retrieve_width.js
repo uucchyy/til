@@ -72,7 +72,7 @@ RenderUrlsToFile = function(urls, callbackPerUrl, callbackFinal) {
                             }
                             return maxwidth; 
                         });
-                        console.log("\"" + url + "\"," + "\"" + tablewidth + "\"," + "\"" + imgwidth + "\"," + "\"" + naturalWidth + "\"");
+                        console.log("\"" + url + "\"," + "\"" + tablewidth + "\"," + "\"" + imgwidth + "\"," + "\"" + naturalwidth + "\"");
                         return next(status, url);
                     }), 100);
                 } else {
