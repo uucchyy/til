@@ -90,6 +90,8 @@ public:
             printf("Bad ARGV!: mapping_file is not found!\n");
             exit(EXIT_FAILURE);
         }
+
+        delete reader;
     }
 
     list<Mapping*> getList() {
@@ -118,6 +120,14 @@ public:
         printf("=======================================\n\n");
     }
 
+    ~MappingRule()
+    {
+        cout << "[debug] destructor" << endl;
+        for(auto itr = rules.begin(); itr != rules.end(); ++itr) 
+        {
+            delete *itr;
+        }
+    }
 };
 
 
@@ -150,5 +160,8 @@ int main(int argc, char *argv[])
 
         cout << mapping->isMath(input) << endl << endl;;
     }
+
+    delete mapping;
+    mapping = NULL;
 
 } 
