@@ -158,7 +158,7 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        cout << mapping->isMath(input) << endl << endl;;
+        cout << mapping->isMath(input) << endl << endl;
     }
 
     delete mapping;
