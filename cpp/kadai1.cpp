@@ -9,7 +9,8 @@
 
 using namespace std;
 
-class Mapping {
+class Mapping
+{
 private:
     string uri;
     string path;
@@ -20,28 +21,33 @@ public:
     {
     }
 
-    string getUri() {
+    string getUri()
+    {
         return uri;
     }
 
-    string getPath() {
+    string getPath()
+    {
         return path;
     }
 
-    string getAttr() {
+    string getAttr()
+    {
         return attr;
     }
 
 };
 
-class FileReader {
+class FileReader
+{
 private:
     vector<string> split(string& input, char delimiter)
     {
         istringstream stream(input);
         string field;
         vector<string> result;
-        while (getline(stream, field, delimiter)) {
+        while (getline(stream, field, delimiter))
+        {
             result.push_back(field);
         }
         return result;
@@ -58,7 +64,8 @@ public:
         ifstream ifs(path);
 
         string line;
-        while (getline(ifs, line)) {
+        while (getline(ifs, line))
+        {
             vector<string> strvec = split(line, ',');
             lst.push_back(strvec);
         }
@@ -68,7 +75,8 @@ public:
 
 };
 
-class MappingRule {
+class MappingRule
+{
 private:
     string path;
     list<Mapping*> rules;
@@ -94,11 +102,13 @@ public:
         delete reader;
     }
 
-    list<Mapping*> getList() {
+    list<Mapping*> getList()
+    {
         return rules;
     }
 
-    string isMath(string path) {
+    string isMatch(string path)
+    {
         for(auto itr = rules.begin(); itr != rules.end(); ++itr) 
         {
             if (path == (*itr)->getUri().c_str()) 
@@ -135,10 +145,12 @@ int main(int argc, char *argv[])
 {
     string path;
 
-    if (argc == 2) {
+    if (argc == 2)
+    {
         path = argv[1];
     }
-    else {
+    else
+    {
         printf("Bad ARGV!\nUse: kadai <path_to_mapping_file>\n");
         exit(EXIT_FAILURE);
     }
@@ -158,10 +170,10 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        cout << mapping->isMath(input) << endl << endl;
+        cout << mapping->isMatch(input) << endl << endl;
     }
 
     delete mapping;
     mapping = NULL;
 
-} 
+}
